@@ -85,7 +85,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  {
+    title: 'Article 5',
+    date: 'Dec 4th, 2019',
+    firstParagraph: `First Paragraph`,
+    secondParagraph: `Second Paragraph`,
+    thirdParagraph: `Third Paragraph`
+  },
+  {
+    title: 'Article 6',
+    date: 'Dec 4th, 2019',
+    firstParagraph: `First Paragraph`,
+    secondParagraph: `Second Paragraph`,
+    thirdParagraph: `Third Paragraph`
+  },
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -153,20 +167,6 @@ function createArticle(data) {
 
     return article; 
 }
-
-// Adding new article to array
-function newArticle() {
-    const newContent =
-        {
-            title: 'New Article',
-            date: 'Dec 4th, 2019',
-            firstParagraph: `First Paragraph`,
-            secondParagraph: `Second Paragraph`,
-            thirdParagraph: `Third Paragraph`
-        };
-    return data.push(newContent);
-}
-newArticle();
 
 // Mapping data and appending createArticle function to articles div
 const articles = document.querySelector('.articles');
