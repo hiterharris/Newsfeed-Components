@@ -143,6 +143,11 @@ function createArticle(data) {
     firstParagraph.textContent = data.firstParagraph;
     secondParagraph.textContent = data.secondParagraph;
     thirdParagraph.textContent = data.thirdParagraph;
+    expandButton.textContent = '\u25bc';
+
+    expandButton.addEventListener('click', () => {
+        article.classList.toggle('article-open');
+    });
 
     return article;
     
