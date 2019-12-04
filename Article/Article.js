@@ -107,7 +107,7 @@ const data = [
 
   Step 3: return the entire component.
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  Step 4: Map over the data, creating a component for each object and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
@@ -143,17 +143,33 @@ function createArticle(data) {
     firstParagraph.textContent = data.firstParagraph;
     secondParagraph.textContent = data.secondParagraph;
     thirdParagraph.textContent = data.thirdParagraph;
-    expandButton.textContent = '\u25bc';
+    expandButton.textContent = '\u25BC';
+    expandButton.style.fontSize = '16px';
 
+    // Adding event listener to expandButton
     expandButton.addEventListener('click', () => {
         article.classList.toggle('article-open');
     });
 
-    return article;
-    
+    return article; 
 }
 
+// Adding new article to array
+function newArticle() {
+    const newContent =
+        {
+            title: 'New Article',
+            date: 'Dec 4th, 2019',
+            firstParagraph: `First Paragraph`,
+            secondParagraph: `Second Paragraph`,
+            thirdParagraph: `Third Paragraph`
+        };
+    return data.push(newContent);
+}
+newArticle();
+
+// Mapping data and appending createArticle function to articles div
 const articles = document.querySelector('.articles');
-data.forEach( data => {
+data.map( data => {
     articles.appendChild(createArticle(data));
 });
