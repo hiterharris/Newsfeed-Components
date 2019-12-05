@@ -6,7 +6,7 @@ let menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
-  'Log Out'
+  'Log Out',
 ];
 
 /* 
@@ -33,3 +33,27 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+function createMenuItem(menuItems) {
+  const menu = document.createElement('div');
+  const list = document.createElement('ul');
+  const menuButton = document.querySelector('.menu-button');
+
+  menu.classList.add('menu');
+  menu.appendChild(list);
+
+  menuItems.forEach( item => {
+  const listItem = document.createElement('li');
+  listItem.textContent = item;
+  list.appendChild(listItem);
+  });
+
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('menu--open');
+  });
+
+  return menu;
+}
+
+const header = document.querySelector('.header');
+header.appendChild(createMenuItem(menuItems));
