@@ -50,7 +50,6 @@ function createMenuItem(menuItems) {
 
   menuButton.addEventListener('click', () => {
     menu.classList.toggle('menu--open');
-    console.log('clicked');
   });
 
   return menu;
